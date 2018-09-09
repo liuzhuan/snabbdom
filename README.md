@@ -1,7 +1,11 @@
 # Snabbdom
 
+> 作者是 Simon Friis Vindum，http://vindum.io ，一个重度 TypeScript 使用者。Snabbdom 的源文件也是由 TypeScript 写成。
+
 A virtual DOM library with focus on simplicity, modularity, powerful features
 and performance.
+
+> 虚拟DOM库，特色在于简单、模块化、多功能、高性能。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT) [![npm version](https://badge.fury.io/js/snabbdom.svg)](https://badge.fury.io/js/snabbdom) [![npm downloads](https://img.shields.io/npm/dm/snabbdom.svg)](https://www.npmjs.com/package/snabbdom)
 
@@ -26,6 +30,8 @@ as a function of its state. But existing solutions were way way too
 bloated, too slow, lacked features, had an API biased towards OOP
 and/or lacked features I needed.
 
+> 虚拟DOM很棒，可以通过状态控制视图。但是现存的解决方案过于臃肿，速度慢，特性少，所以重新发明轮子。
+
 ## Introduction
 
 Snabbdom consists of an extremely simple, performant and extensible
@@ -33,10 +39,16 @@ core that is only ≈ 200 SLOC. It offers a modular architecture with
 rich functionality for extensions through custom modules. To keep the
 core simple, all non-essential functionality is delegated to modules.
 
+> SLOC: source lines of code 源代码行
+
+> 源代码只有200行左右。貌似现存的很多库都变为内核+扩展的形式。内核很小，外延很大。
+
 You can mold Snabbdom into whatever you desire! Pick, choose and
 customize the functionality you want. Alternatively you can just use
 the default extensions and get a virtual DOM library with high
 performance, small size and all the features listed below.
+
+> 可以把Snabbdom塑造成任何形状。
 
 ## Features
 
@@ -45,7 +57,7 @@ performance, small size and all the features listed below.
     understand how it works.
   * Extendable through modules.
   * A rich set of hooks available, both per vnode and globally for modules,
-    to hook into any part of the diff and patch process.
+    to hook into any part of the diff and patch process.（`diff`和`patch`是两个重要的过程，`diff`用来找不同，`patch`用来施加不同。）
   * Splendid performance. Snabbdom is among the fastest virtual DOM libraries
     in the [Virtual DOM Benchmark](http://vdom-benchmark.github.io/vdom-benchmark/).
   * Patch function with a function signature equivalent to a reduce/scan
@@ -93,6 +105,8 @@ var newVnode = h('div#container.two.classes', {on: {click: anotherEventHandler}}
 // Second `patch` invocation
 patch(vnode, newVnode); // Snabbdom efficiently updates the old view to the new state
 ```
+
+> `patch` 用来将虚拟DOM更新为新的DOM。
 
 ## Examples
 
